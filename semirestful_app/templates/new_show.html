@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="/" class="home">Home</a>
+
+<div class="new_edit">
+
+    <h1>Add a New Show</h1>
+
+    
+
+    <form action="/shows/create" method="POST">
+        {% csrf_token %}
+
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="form_field">
+        <label for="title">Title</label>
+        <input type="text" name="title">
+        </div>
+
+        <div class="form_field">
+            <label for="network">Network</label>
+            <input type="text" name="network">
+        </div>
+
+        <div class="form_field">
+            <label for="release_date">Release Date</label>
+            <input type="date" name="release_date">
+        </div>
+
+            <label id="description" for="description">Description</label>
+            <textarea name="description" id="" cols="32" rows="5"></textarea>
+
+        <input id="create" type="submit" value="Create Show">
+
+    </form>
+
+</div>
+{% endblock %}

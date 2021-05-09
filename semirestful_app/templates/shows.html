@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>All Shows</h1>
+
+<table>
+    <thead>
+        <th class="counters">#</th>
+        <th>Title</th>
+        <th>Network</th>
+        <th>Release Date</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        {% for show in all_shows %}
+        <tr>
+            <td class="counters">{{forloop.counter}}</td>
+            <td class="titles">{{show.title}}</td>
+            <td>{{show.network}}</td>
+            <td>{{show.release_date|date:'m/d/Y'}}</td>
+            <td class="actions"><a href="/shows/{{show.id}}">Show</a> | <a href="/shows/{{show.id}}/edit">Edit</a> | <form action="/shows/{{show.id}}/destroy" method="post">
+                {% csrf_token %}
+                <input class="delete" type="submit" value="Delete">
+            </form>
+            
+            </td>
+        {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+<a href="shows/new" id="new">Add a New Show</a>
+
+
+
+
+{% endblock %}

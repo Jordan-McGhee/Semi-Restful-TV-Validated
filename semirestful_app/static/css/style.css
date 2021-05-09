@@ -1,0 +1,143 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* shows.html */
+
+#wrapper {
+    margin: 0px auto;
+    width: 970px;
+    padding: 20px;
+    text-align: left;
+    background-color: #efefef;
+}
+
+.delete {
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    font-size: 90%;
+}
+
+.delete:hover {
+    color: red;
+}
+
+table {
+    margin: 15px auto;
+    width: 970px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    outline: 1px solid black;
+}
+
+th {
+    background-color: #efeefe;
+}
+
+.titles {
+    min-width: 150px;
+}
+
+.counters {
+    max-width: 50px;
+    text-align: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+#new {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+a:link, a:visited {
+    color: blue;
+}
+a:hover {
+    color: red;
+}
+
+/* new_show.html */
+
+.messages {
+    color: red;
+}
+
+.new_edit {
+    margin: 0px auto;
+    width: 970px;
+    padding: 20px;
+}
+
+.new_edit h1 {
+    text-align: center;
+}
+
+.new_edit form {
+    margin: 20px auto;
+    width: 28%;
+    outline: 1px solid black;
+    padding: 20px;
+}
+
+.form_field {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    align-items: center;
+}
+
+#description {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#create {
+    margin: 10px auto 0px;
+    padding: 8px;
+}
+
+/* edit_show.html */
+
+#update {
+    margin: 10px auto 0px;
+    padding: 8px;
+}
+
+/* specific_show.html */
+
+#specific h1 {
+    margin: 20px 0px;
+}
+
+#specific p {
+    font-size: 120%;
+}
+
+#show_description {
+    margin-bottom: 30px;
+}
+
+#updated {
+    margin-bottom: 30px;
+}
+
+#edit_delete {
+    display: flex;
+}
+
+#edit_delete a, p {
+    margin-right: 10px;
+}

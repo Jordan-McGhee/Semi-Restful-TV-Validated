@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="/" class="home">Home</a>
+
+<div id="specific">
+
+    <h1>{{this_show.title}}</h1>
+    <p>Network: {{this_show.network}}</p>
+    <p>Release Date: {{this_show.release_date|date:"M d, Y"}}</p>
+    <p id="show_description">Description: {{this_show.description}}</p>
+
+    <p id="updated">Last Updated: {{this_show.updated_at|date:"M d, Y"}}</p>
+
+
+    <div id="edit_delete">
+        <a href="/shows/{{this_show.id}}/edit">Edit</a>
+        <p> | </p>
+        <form action="/shows/{{show.id}}/destroy" method="post">
+            {% csrf_token %}
+            <input class="delete" type="submit" value="Delete">
+        </form>
+    </div>
+</div>
+{% endblock %}

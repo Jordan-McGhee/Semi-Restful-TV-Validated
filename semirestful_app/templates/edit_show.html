@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="/">Home</a>
+
+<div class="new_edit">
+
+    <h1>Edit Show</h1>
+
+    <form action="/shows/{{this_show.id}}/update" method="POST">
+        {% csrf_token %}
+
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="form_field">
+        <label for="title">Title</label>
+        <input type="text" name="title" value="{{this_show.title}}">
+        </div>
+
+        <div class="form_field">
+            <label for="network">Network</label>
+            <input type="text" name="network" value="{{this_show.network}}">
+        </div>
+
+        <div class="form_field">
+            <label for="release_date">Release Date</label>
+            <input type="date" name="release_date" value="{{this_show.release_date|date:'Y-m-d'}}">
+        </div>
+
+        <label id="description" for="description">Description</label>
+        <textarea name="description" id="" cols="32" rows="5">{{this_show.description}}</textarea>
+
+        <input id="update" type="submit" value="Update Show">
+
+    </form>
+</div>
+{% endblock %}
